@@ -16,7 +16,10 @@ public class Game implements ShotDelegate {
     public Game(){
         // set up...
         humanPlayer = new HumanPlayer("Human", new AutomaticShipFactory(), this);
-        computerPlayer = new RandomAIPlayer(this);
+        computerPlayer = new RandomAIPlayer(this); 
+    }
+
+    public void start(){
         humanPlayer.placeShips();
         computerPlayer.placeShips();
 

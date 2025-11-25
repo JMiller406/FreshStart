@@ -16,7 +16,7 @@ import java.awt.BorderLayout;
 public class GameWindow extends BetterWindow {
 
     private GridPanel targetPanel = new GridPanel();
-    private GridPanel oceanPanel = new GridPanel();
+    private GridPanel oceanPanel = new OceanGridPanel();
     private JTextPane statusPanel = new JTextPane();
     private JScrollPane statusScroller = new JScrollPane(statusPanel);
     private FadingLabel shotLabel = new FadingLabel("Shot Counter", JLabel.CENTER);

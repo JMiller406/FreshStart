@@ -20,5 +20,8 @@ public class App {
 
         gameWindow.setVisible(true);
         gameWindow.pack();
+
+        // 4. Start the game!
+        game.start();
     }
 }
