@@ -48,7 +48,7 @@ public class GridPanel extends JPanel {
         }
 
         if(gridRep != null){
-            // the grid rep has information about what I should be drwaing in the cells
+            // the grid rep has information about what I should be drawing in the cells
             for(int row = 0; row < 10; row++){
                 for(int column = 0; column < 10; column++){
                     CellState state = gridRep.getStateAt(row, column);
@@ -98,16 +98,16 @@ public class GridPanel extends JPanel {
 
         // location math
         int upperLeftX = column * Constants.Dimensions.CELL_SIZE + Constants.Dimensions.CELL_SIZE / 2 - Constants.Dimensions.PEG_DIAMETER / 2;
-        int upperLefty = row * Constants.Dimensions.CELL_SIZE + Constants.Dimensions.CELL_SIZE / 2 - Constants.Dimensions.PEG_DIAMETER / 2;
+        int upperLeftY = row * Constants.Dimensions.CELL_SIZE + Constants.Dimensions.CELL_SIZE / 2 - Constants.Dimensions.PEG_DIAMETER / 2;
 
         Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(Color.WHITE);
-        Ellipse2D.Double circle = new Ellipse2D.Double(upperLeftX, upperLefty, Constants.Dimensions.PEG_DIAMETER, Constants.Dimensions.PEG_DIAMETER);
+        Ellipse2D.Double circle = new Ellipse2D.Double(upperLeftX, upperLeftY, Constants.Dimensions.PEG_DIAMETER, Constants.Dimensions.PEG_DIAMETER);
         g2d.fill(circle);
         g2d.setColor(Color.BLACK);
         g2d.draw(circle);
     
-    };
+    }
     
 
     @Override

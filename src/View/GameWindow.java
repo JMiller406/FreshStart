@@ -68,7 +68,7 @@ public class GameWindow extends BetterWindow {
         contentPane.add(centerPanel, BorderLayout.CENTER);
 
 
-        // window: not resizable, sized specifiacally to calculation
+        // window: not resizable, sized specifically to calculation
         this.setResizable(false);
         this.setSize(new Dimension(Constants.Dimensions.WINDOW_WIDTH, Constants.Dimensions.WINDOW_HEIGHT));
         this.setPreferredSize(new Dimension(Constants.Dimensions.WINDOW_WIDTH, Constants.Dimensions.WINDOW_HEIGHT));
