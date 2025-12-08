@@ -17,6 +17,7 @@ public class HumanPlayer implements Player, ShotDelegate, Serializable {
         this.shotDelegate = shotDelegate;
     }
 
+    @Override
     public void placeShips(){
         oceanGrid.placeShips(shipFactory.getShips());
     }
