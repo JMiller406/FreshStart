@@ -15,7 +15,14 @@ public class OceanGridController {
 
 		// listen for notifications from the model
 		modelListener = new OceanGridListener();
-		model.addListener(modelListener);
+		this.model.addListener(modelListener);
+	}
+
+	public void disconnect() {
+		model.removeListener(modelListener);
+		modelListener = null;
+		view = null;
+		model = null;
 	}
 
 	private class OceanGridListener implements GridListener {

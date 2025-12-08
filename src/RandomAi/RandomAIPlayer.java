@@ -1,4 +1,5 @@
 package RandomAi;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -12,7 +13,7 @@ import Model.Ship;
 import Model.ShotDelegate;
 import Model.AutomaticShipFactory;
 
-public class RandomAIPlayer implements Player {
+public class RandomAIPlayer implements Player, Serializable {
 
 	private List<Coordinate> shotsToTake = new ArrayList<>();
     private OceanGrid oceanGrid = new OceanGrid();

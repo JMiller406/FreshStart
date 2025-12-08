@@ -1,9 +1,10 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ship {
+public class Ship implements Serializable{
     private String name;
     private int length;
     private List<Coordinate> coordinates = new ArrayList<Coordinate>();

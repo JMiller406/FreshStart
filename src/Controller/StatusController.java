@@ -20,6 +20,13 @@ public class StatusController {
         this.model.addListener(statusListener);
     }
 
+    public void disconnect() {
+        model.removeListener(statusListener);
+        statusListener = null;
+        statusPane = null;
+        model = null;
+    }
+
     private class ControllerStatusListener implements StatusListener {
         @Override
         public void statusMessage(String message) {

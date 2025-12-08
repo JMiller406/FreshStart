@@ -1,10 +1,11 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Coordinate {
+public class Coordinate implements Serializable{
     private int row;
     private int column;
 

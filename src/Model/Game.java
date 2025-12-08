@@ -1,22 +1,30 @@
 package Model;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import RandomAi.RandomAIPlayer;
 
-public class Game implements ShotDelegate {
+public class Game implements ShotDelegate, Serializable {
     private HumanPlayer humanPlayer;
     private Player computerPlayer;
     private Player currentPlayer;
     private Player otherPlayer;
-    private List<StatusListener> listeners = new ArrayList<>();
+    private transient List<StatusListener> listeners = new ArrayList<>();
 
 
     public Game(){
         // set up...
         humanPlayer = new HumanPlayer("Human", new AutomaticShipFactory(), this);
         computerPlayer = new RandomAIPlayer(this); 
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+        in.defaultReadObject();
+        listeners = new ArrayList<StatusListener>();
     }
 
     public void start(){
@@ -31,6 +39,10 @@ public class Game implements ShotDelegate {
 
     public void addListener(StatusListener toAdd){
         listeners.add(toAdd);
+    }
+
+    public void removeListener(StatusListener toRemove){
+        listeners.remove(toRemove);
     }
 
     protected void notifyStatus(String message){

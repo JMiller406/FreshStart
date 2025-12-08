@@ -1,6 +1,8 @@
 package Model;
 
-public class GridRep {
+import java.io.Serializable;
+
+public class GridRep implements Serializable{
     private CellState[][] cellStates = new CellState[10][10];
 
     public GridRep(Grid grid) {

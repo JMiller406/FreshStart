@@ -56,6 +56,15 @@ public class TargetGridController {
         }
     }
 
+    public void disconnect() {
+        model.removeListener(modelListener);
+        view.removeMouseListener(viewListener);
+        modelListener = null;
+        viewListener = null;
+        view = null;
+        model = null;
+    }
+
     private class TargetGridListener implements GridListener {
 
         @Override
