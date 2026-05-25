@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import RandomAi.RandomAIPlayer;
+import JMillerAdvanced.JMillerAdvancedAIPlayer;
 
 public class Game implements ShotDelegate, Serializable {
     private HumanPlayer humanPlayer;
@@ -19,7 +19,7 @@ public class Game implements ShotDelegate, Serializable {
     public Game(){
         // set up...
         humanPlayer = new HumanPlayer("Human", new AutomaticShipFactory(), this);
-        computerPlayer = new RandomAIPlayer(this); 
+        computerPlayer = new JMillerAdvancedAIPlayer(this); 
     }
 
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
